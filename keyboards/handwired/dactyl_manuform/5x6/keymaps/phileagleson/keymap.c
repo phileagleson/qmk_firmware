@@ -1,9 +1,9 @@
 #include QMK_KEYBOARD_H
 
 #define _DVORAK 0
-#define _LOWER 1
-#define _RAISE 2
-#define _WINDOWS 3
+#define _WINDOWS 1
+#define _LOWER 2
+#define _RAISE 3
 
 #define RAISE TT(_RAISE)
 #define LOWER TT(_LOWER)
