@@ -32,12 +32,22 @@
 #define HOME_N LALT_T(KC_N)
 #define HOME_S RGUI_T(KC_S)
 
+enum {
+  TD_ESC_CAPS,
+};
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_5x6(
       KC_LBRC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, 
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    KC_SLASH, 
-      KC_ESC,  CTL_A,   OPT_O,   CUS_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CUS_T,   OPT_N,   CTL_S,   KC_MINUS,
+      TD(TD_ESC_CAPS),  CTL_A,   OPT_O,   CUS_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CUS_T,   OPT_N,   CTL_S,   KC_MINUS,
       KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,    KC_BSLASH,
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE, 
@@ -70,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_WINDOWS] = LAYOUT_5x6(
       KC_LBRC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,  KC_SLASH, 
-      KC_ESC,  HOME_A,   HOME_O,   HOME_E,   HOME_U, KC_I,                      KC_D,   HOME_H, HOME_T, HOME_N, HOME_S, KC_MINUS,
+      TD(TD_ESC_CAPS),  HOME_A,   HOME_O,   HOME_E,   HOME_U, KC_I,                      KC_D,   HOME_H, HOME_T, HOME_N, HOME_S, KC_MINUS,
       KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,  KC_BSLASH,
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE, 
