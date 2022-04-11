@@ -39,7 +39,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESCAPE, KC_CAPS_LOCK)
 };
-
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_WINDOWS] = LAYOUT_5x6(
       KC_LBRC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
