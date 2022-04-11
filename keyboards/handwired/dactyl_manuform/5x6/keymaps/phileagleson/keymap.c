@@ -1,13 +1,11 @@
 #include QMK_KEYBOARD_H
 
 #define _DVORAK 0
-#define _WINDOWS 1
-#define _LOWER 2
-#define _RAISE 3
+#define _LOWER 1
+#define _RAISE 2
 
 #define RAISE TT(_RAISE)
 #define LOWER TT(_LOWER)
-#define WINDOWS TT(_WINDOWS)
 
 // Left-hand home row mods mac
 #define CTL_A LCTL_T(KC_A)
@@ -52,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE, 
                                              KC_HYPR, KC_BSPC,             KC_DEL,  KC_HYPR,
-                                             KC_TAB, KC_GRV,             WINDOWS,   KC_EQL
+                                             KC_TAB, KC_GRV,             KC_CAPS,   KC_EQL
     ),
 
     [_LOWER] = LAYOUT_5x6(
@@ -76,15 +74,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   _______,_______,            _______,_______,
                                                   _______,_______,            _______,_______,
                                                   _______,_______,            _______,_______
-    ),
-    [_WINDOWS] = LAYOUT_5x6(
-      KC_LBRC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
-      KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,  KC_SLASH, 
-      TD(TD_ESC_CAPS),  HOME_A,   HOME_O,   HOME_E,   HOME_U, KC_I,                      KC_D,   HOME_H, HOME_T, HOME_N, HOME_S, KC_MINUS,
-      KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,  KC_BSLASH,
-                        KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
-                                         LOWER, KC_SPC,                         KC_ENT, RAISE, 
-                                             KC_HYPR, KC_BSPC,             KC_HYPR,  KC_DEL,
-                                             KC_TAB, KC_GRV,               _______,  KC_EQL
     ),
 };
