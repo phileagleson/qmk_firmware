@@ -7,17 +7,6 @@
 #define RAISE TT(_RAISE)
 #define LOWER TT(_LOWER)
 
-// Left-hand home row mods mac
-#define CTL_A LCTL_T(KC_A)
-#define OPT_O LOPT_T(KC_O)
-#define CUS_E LGUI_T(KC_E)
-#define SFT_U LSFT_T(KC_U)
-
-// Right-hand home row mods mac
-#define SFT_H RSFT_T(KC_H)
-#define CUS_T RGUI_T(KC_T)
-#define OPT_N LOPT_T(KC_N)
-#define CTL_S RCTL_T(KC_S)
 // Left-hand home row mods windows
 #define HOME_A LGUI_T(KC_A)
 #define HOME_O LALT_T(KC_O)
@@ -30,21 +19,13 @@
 #define HOME_N LALT_T(KC_N)
 #define HOME_S RGUI_T(KC_S)
 
-enum {
-  TD_ESC_CAPS
-};
 
-// Tap Dance definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESCAPE, KC_CAPS_LOCK)
-};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_WINDOWS] = LAYOUT_5x6(
       KC_GRV,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,  KC_EQL,
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,  KC_SLASH, 
-      TD(TD_ESC_CAPS),  HOME_A,   HOME_O,   HOME_E,   HOME_U, KC_I,         KC_D,   HOME_H, HOME_T, HOME_N, HOME_S, KC_MINUS,
+      MT(MOD_RSFT,KC_ESC),  HOME_A,   HOME_O,   HOME_E,   HOME_U, KC_I,         KC_D,   HOME_H, HOME_T, HOME_N, HOME_S, KC_MINUS,
       KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,  KC_BSLASH,
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE, 
@@ -66,12 +47,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_RAISE] = LAYOUT_5x6(
           KC_F12 , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,                        KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
-          _______,_______,_______,KC_UP,_______,_______,                        KC_RBRC,_______,KC_NLCK,KC_INS ,KC_SLCK,KC_MUTE,
-          _______,_______,KC_LEFT,KC_DOWN  ,KC_RIGHT,_______,                   KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,_______,KC_VOLU,
+          _______,_______,_______,KC_UP,_______,_______,                        KC_RBRC,_______,KC_UP,KC_INS ,KC_SLCK,KC_MUTE,
+          _______,_______,KC_LEFT,KC_DOWN  ,KC_RIGHT,_______,                   KC_RPRN,KC_LEFT,KC_DOWN,KC_RIGHT,_______,KC_VOLU,
           _______,KC_CUT,KC_COPY,KC_PASTE,_______,_______,                        _______,_______,_______,_______,_______,KC_VOLD,
                                                   _______,_______,            KC_EQL ,_______,
                                                   _______,_______,            _______,_______,
-                                                  _______,_______,            _______,_______,
-                                                  _______,_______,            _______,_______
+                                                  _______,_______,            KC_HOME,KC_END,
+                                                  _______,_______,            KC_PGUP,KC_PGDN
     ),
 };
