@@ -18,20 +18,6 @@
 #define CUS_T RGUI_T(KC_T)
 #define OPT_N LOPT_T(KC_N)
 #define CTL_S RCTL_T(KC_S)
-// Left-hand home row mods windows
-#define HOME_A LGUI_T(KC_A)
-#define HOME_O LALT_T(KC_O)
-#define HOME_E LCTL_T(KC_E)
-#define HOME_U LSFT_T(KC_U)
-
-// Right-hand home row mods windows
-#define HOME_H RSFT_T(KC_H)
-#define HOME_T RCTL_T(KC_T)
-#define HOME_N LALT_T(KC_N)
-#define HOME_S RGUI_T(KC_S)
-
-
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_5x6(
