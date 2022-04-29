@@ -12,6 +12,7 @@
 #define OPT_O LOPT_T(KC_O)
 #define CUS_E LGUI_T(KC_E)
 #define SFT_U LSFT_T(KC_U)
+#define ESC_TAB MT(KC_RSFT)
 
 // Right-hand home row mods mac
 #define SFT_H RSFT_T(KC_H)
@@ -30,9 +31,6 @@
 #define HOME_N LALT_T(KC_N)
 #define HOME_S RGUI_T(KC_S)
 
-enum {
-  TD_ESC_CAPS,
-};
 
 // Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -43,9 +41,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_5x6(
-      KC_LBRC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, 
+      KC_GRV,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL, 
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    KC_SLASH, 
-      TD(TD_ESC_CAPS),  CTL_A,   OPT_O,   CUS_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CUS_T,   OPT_N,   CTL_S,   KC_MINUS,
+      ESC_TAB,  CTL_A,   OPT_O,   CUS_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CUS_T,   OPT_N,   CTL_S,   KC_MINUS,
       KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,    KC_BSLASH,
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE, 
@@ -67,8 +65,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_RAISE] = LAYOUT_5x6(
           KC_F12 , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,                        KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
-          _______,_______,_______,KC_UP,_______,_______,                        KC_RBRC,_______,KC_NLCK,KC_INS ,KC_SLCK,KC_MUTE,
-          _______,_______,KC_LEFT,KC_DOWN  ,KC_RIGHT,_______,                   KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,_______,KC_VOLU,
+          _______,_______,_______,KC_UP,_______,_______,                        KC_RBRC,_______,KC_UP,KC_INS ,KC_SLCK,KC_MUTE,
+          _______,_______,KC_LEFT,KC_DOWN  ,KC_RIGHT,_______,                   KC_RPRN,KC_LEFT,KC_DOWN,KC_RIGHT,_______,KC_VOLU,
           _______,KC_CUT,KC_COPY,KC_PASTE,_______,_______,                        _______,_______,_______,_______,_______,KC_VOLD,
                                                   _______,_______,            KC_EQL ,_______,
                                                   _______,_______,            _______,_______,
