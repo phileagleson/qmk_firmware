@@ -35,13 +35,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_LOWER] = LAYOUT_5x6(
         _______,_______,_______,_______,_______ ,_______,                    _______,_______,KC_KP_SLASH,KC_PAST,KC_KP_MINUS,_______,
-        _______,_______,_______,_______,_______,_______,                     KC_RBRC, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,_______,
-        _______,_______,_______,_______,_______,_______,                     KC_RPRN, KC_P4 , KC_P5 , KC_P6 ,KC_PENT,_______,
+        _______,_______,_______,_______,_______,_______,                     _______, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,_______,
+        _______,_______,_______,_______,_______,_______,                     KC_DOT, KC_P4 , KC_P5 , KC_P6 ,KC_MINUS,KC_ENT,
         _______,KC_CUT,KC_COPY,KC_PASTE,_______,_______,                     _______, KC_P1 , KC_P2 , KC_P3 ,KC_EQL ,KC_UNDS,
-                                                _______,_______,                              KC_P0,KC_DOT,
+                        _______,_______,                                               KC_P0,KC_DOT,
                                                 _______,_______,                  _______,_______,
-                                                _______,_______,            _______,_______,
-                                                _______,_______,            _______,_______
+                                                  _______,_______,            KC_HOME,KC_END,
+                                                  _______,_______,            KC_PGUP,KC_PGDN
 
     ),
 
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           _______,_______,_______,KC_UP,_______,_______,                        KC_RBRC,_______,KC_UP,KC_INS ,KC_SLCK,KC_MUTE,
           _______,_______,KC_LEFT,KC_DOWN  ,KC_RIGHT,_______,                   KC_RPRN,KC_LEFT,KC_DOWN,KC_RIGHT,_______,KC_VOLU,
           _______,KC_CUT,KC_COPY,KC_PASTE,_______,_______,                        _______,_______,_______,_______,_______,KC_VOLD,
-                                                  _______,_______,            KC_EQL ,_______,
+                            _______,_______,                                               KC_EQL ,_______,
                                                   _______,_______,            _______,_______,
                                                   _______,_______,            KC_HOME,KC_END,
                                                   _______,_______,            KC_PGUP,KC_PGDN
