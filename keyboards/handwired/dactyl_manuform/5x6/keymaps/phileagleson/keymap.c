@@ -7,23 +7,23 @@
 #define RAISE TT(_RAISE)
 #define LOWER TT(_LOWER)
 
-// Left-hand home row mods mac
-#define CTL_A LCTL_T(KC_A)
+// Left-hand home row mods
+#define CUS_A LGUI_T(KC_A)
 #define OPT_O LOPT_T(KC_O)
-#define CUS_E LGUI_T(KC_E)
+#define CTL_E LCTL_T(KC_E)
 #define SFT_U LSFT_T(KC_U)
 
-// Right-hand home row mods mac
+// Right-hand home row mods
 #define SFT_H RSFT_T(KC_H)
-#define CUS_T RGUI_T(KC_T)
+#define CTL__T RCTL_T(KC_T)
 #define OPT_N LOPT_T(KC_N)
-#define CTL_S RCTL_T(KC_S)
+#define CUS_S RGUI_T(KC_S)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DVORAK] = LAYOUT_5x6(
       KC_GRV,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,                     KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,  KC_Y,                      KC_F,   KC_G,    KC_C,    KC_R,    KC_L,    KC_SLASH,
-      MT(MOD_RSFT,KC_ESC),  CTL_A,   OPT_O,   CUS_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CUS_T,   OPT_N,   CTL_S,   KC_MINUS,
+      MT(MOD_RSFT,KC_ESC),  CUS_A,   OPT_O,   CTL_E,   SFT_U, KC_I,                      KC_D,   SFT_H,   CTL__T,   OPT_N,   CUS_S,   KC_MINUS,
       KC_LCTL, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                    KC_B  , KC_M,    KC_W,    KC_V,    KC_Z,    KC_BSLS,
                         KC_LBRC,   KC_RBRC,                                                  KC_LPRN, KC_RPRN,
                                          LOWER, KC_SPC,                         KC_ENT, RAISE,
